@@ -30,16 +30,40 @@ describe('Click Counter', function(){
         })
     })
 
-    
-    describe('clickCompanionValue', function(){
+    describe('clickIncrementor', function(){
+        it('increases value of users clicks by 1', function(){
+            sut.clickIncrementor()
+            expect(sut.clickCount).toBe(1)
+        })
+    })
+    describe('clickCompanionCost', function(){
         it('has a value of 100', function(){
-            expect(sut.clickCompanionValue).toBe(100);
+            expect(sut.clickCompanionCost).toBe(100);
         })
     })
     
-    describe('getClickCompanionValue', function(){
+    describe('getClickCompanionCost', function(){
         it('returns a value of 100', function(){
-            expect(sut.getClickCompanionValue()).toBe(100);
+            expect(sut.getClickCompanionCost()).toBe(100);
         })
     })
+    describe('purchaseClickCompanion', function(){
+        it('increases clicking companion to 1', function(){
+            sut.purchaseClickCompanion()
+            expect(sut.clickCompanionCount).toBe(1)
+        });
+    })
+    describe('purchaseClickCompanion', function(){
+        it('decreases clicking count by 100', function(){
+            sut.purchaseClickCompanion()
+            expect(sut.clickCount).toBe(-100)
+        })
+    })
+    describe('purchaseEachClickCompanion', function(){
+        it('increases the cost by 10%', function(){
+            sut.purchaseClickCompanion()
+            expect(sut.clickCompanionCost).toBe(110)
+        })
+    })
+    
 })
