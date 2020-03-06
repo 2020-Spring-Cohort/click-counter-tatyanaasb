@@ -26,9 +26,16 @@ class ClickCounter{
         this.clickCompanionCost = this.clickCompanionCost + (this.clickCompanionCost*.1);  
     }
 
+    purchaseCondition(){
+        if (this.clickCount >= this.clickCompanionCost)
+        {
+            this.purchaseClickCompanion()
+        }
+    }
     purchaseClickCompanion(){
         this.clickCompanionCount++;
-        this.clickCount=-100;
+        this.clickCount =- this.clickCompanionCost;
         this.purchaseEachClickCompanion();
     }
+
 }

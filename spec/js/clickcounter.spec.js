@@ -65,5 +65,11 @@ describe('Click Counter', function(){
             expect(sut.clickCompanionCost).toBe(110)
         })
     })
+    describe('purchaseCondition', function(){
+        it('allows companionCount to increase if the clickingCount is >= companionCost', function(){
+            sut.purchaseCondition()
+            expect(sut.clickCompanionCount).toBe(0)
+        })
+    })
     
 })
