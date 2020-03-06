@@ -37,7 +37,7 @@ class ClickCounter{
 
     purchaseClickCompanion(){
         this.clickCompanionCount++;
-        this.clickCount =- this.clickCompanionCost;
+        this.clickCount -= this.clickCompanionCost;
         this.purchaseEachClickCompanion();
     }
 
@@ -45,9 +45,14 @@ class ClickCounter{
         return this.compounderCount;
     }
 
+    purchaseEachCompounder(){
+        this.compounderCost = this.compounderCost + (this.compounderCost * .1);  
+    }
+
     purchaseCompounder(){
         this.compounderCount++;
-        this.clickCount =- this.compounderCost;
+        this.clickCount -= this.compounderCost;
+        this.purchaseEachCompounder();
     }
 
 

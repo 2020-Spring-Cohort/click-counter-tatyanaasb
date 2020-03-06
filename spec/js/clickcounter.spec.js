@@ -102,4 +102,11 @@ describe('Click Counter', function(){
             expect(sut.clickCount).toBe(-10)
         })
     })
+
+    describe('purchaseEachCompounder', function(){
+        it('increases the cost by 10%', function(){
+            sut.purchaseCompounder()
+            expect(sut.compounderCost).toBe(11)
+        })
+    })
 })
