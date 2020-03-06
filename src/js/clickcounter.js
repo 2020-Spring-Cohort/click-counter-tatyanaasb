@@ -28,7 +28,7 @@ class ClickCounter{
         this.clickCompanionCost = this.clickCompanionCost + (this.clickCompanionCost*.1);  
     }
 
-    purchaseCondition(){
+    purchaseCompanionCondition(){
         if (this.clickCount >= this.clickCompanionCost)
         {
             this.purchaseClickCompanion()
@@ -49,10 +49,22 @@ class ClickCounter{
         this.compounderCost = this.compounderCost + (this.compounderCost * .1);  
     }
 
+    purchaseCompounderCondition(){
+        if (this.clickCount >= this.compounderCost)
+        {
+            this.purchaseCompounders()
+        }
+    }
+
+    compounderClickValue(){
+        this.clickCount *= 1.2;
+    }
+
     purchaseCompounder(){
         this.compounderCount++;
         this.clickCount -= this.compounderCost;
         this.purchaseEachCompounder();
+        this.compounderClickValue();
     }
 
 

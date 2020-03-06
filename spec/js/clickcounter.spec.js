@@ -70,9 +70,9 @@ describe('Click Counter', function(){
         })
     })
 
-    describe('purchaseCondition', function(){
+    describe('purchaseCompanionCondition', function(){
         it('allows companionCount to increase if the clickingCount is >= companionCost', function(){
-            sut.purchaseCondition()
+            sut.purchaseCompanionCondition()
             expect(sut.clickCompanionCount).toBe(0)
         })
     })
@@ -107,6 +107,21 @@ describe('Click Counter', function(){
         it('increases the cost by 10%', function(){
             sut.purchaseCompounder()
             expect(sut.compounderCost).toBe(11)
+        })
+    })
+
+    describe('purchaseCompounderCondition', function(){
+        it('allows compounderCount to increase if the clickingCount is >= compounderCost', function(){
+            sut.purchaseCompounderCondition()
+            expect(sut.compounderCount).toBe(0)
+        })
+    })
+
+    describe('compounderClickValue', function(){
+        it('increases the value of a click by 1.2x', function(){
+            sut.clickCount = 1;
+            sut.compounderClickValue()
+            expect(sut.clickCount).toBe(1.2)
         })
     })
 })
