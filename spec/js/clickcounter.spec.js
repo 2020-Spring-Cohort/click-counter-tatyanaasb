@@ -118,10 +118,23 @@ describe('Click Counter', function(){
     })
 
     describe('compounderClickValue', function(){
-        it('increases the value of a click by 1.2x', function(){
-            sut.clickCount = 1;
-            sut.compounderClickValue()
-            expect(sut.clickCount).toBe(1.2)
+        it('has a value of 1 click', function(){
+            expect(sut.compounderClickValue).toBe(1)
         })
     })
+
+    describe('compounderClickValueMultiplied', function(){
+        it('increases the value of a click by 1.2x', function(){
+            sut.compounderClickValueMultiplied()
+            expect(sut.compounderClickValue).toBe(1.2)
+        })
+    })
+    
+    describe('purchaseCompounder', function(){
+        it('increases each click value to 1.2 to the amount of compounderCount', function(){
+            sut.purchaseCompounder()
+            expect(sut.compounderClickValue).toBe(1.2)
+        })
+    })
+
 })
