@@ -69,3 +69,31 @@ class ClickCounter{
     }
     
 }
+
+// You save some great fields and functions in the ClickCounter class
+// We need to instantiate an object so that we can act upon these fields and functions
+const appCookie = new ClickCounter();
+
+// Locate the elements in your html and save their 'node' in a variable, so that we
+// can give them a user friendly name and manipulate them later
+const clickCounterButtonElement = document.querySelector(".click_counter_button");
+const clickCountDisplayElement = document.querySelector('.click_count_display');
+
+// Write a function that updates the clickCountDisplayElement with the number of clicks
+const updateClickCountDisplay = () => {
+    clickCountDisplayElement.innerText = appCookie.getClickCount();
+}
+
+// Write a function that adds a 'click' event listener to your clickCounterButtonElement
+// When the 'click' is heard, the clickIncrementer() method will be run, and the click count display
+// will be updated
+const makeButtonIntoClickCounter = () => {
+    clickCounterButtonElement.addEventListener('click', () => {
+        appCookie.clickIncrementor();
+        updateClickCountDisplay();
+    })
+}
+
+// The functions are written, but they haven't been executed yet
+// To hook up your html, Let's officially activate the event listener on the click_counter_button
+makeButtonIntoClickCounter();
