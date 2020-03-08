@@ -67,5 +67,14 @@ class ClickCounter{
     updateClickCounts(){
         this.clickCount = this.clickCount + (this.clickCompanionCount * this.clickValue)
     }
-    
 }
+
+const appButton = new ClickCounter();
+
+const clickButtonElement = document.querySelector('.clicker_buttons__incrementor')
+const clickCompanionElement = document.querySelector('.clicker_buttons__companion')
+const clickCompounderElement = document.querySelector('.clicker_buttons__compounder')
+
+const currentClicksData = document.querySelector('.clicker_data__current_clicks')
+const currentCompanionData = document.querySelector('.clicker_data__current_companion')
+const currentCompounderData = document.querySelector('.clicker_data__current_compounder')
