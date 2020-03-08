@@ -37,18 +37,6 @@ describe('Click Counter', function(){
         })
     })
 
-    // describe('clickCompanionCost', function(){
-    //     it('has a value of 100', function(){
-    //         expect(sut.clickCompanionCost).toBe(100);
-    //     })
-    // })
-    
-    // describe('getClickCompanionCost', function(){
-    //     it('returns a value of 100', function(){
-    //         expect(sut.getClickCompanionCost()).toBe(100);
-    //     })
-    // })
-
     describe('purchaseClickCompanion', function(){
         it('increases clicking companion to 1', function(){
             sut.purchaseClickCompanion()
@@ -117,23 +105,23 @@ describe('Click Counter', function(){
         })
     })
 
-    describe('compounderClickValue', function(){
+    describe('clickValue', function(){
         it('has a value of 1 click', function(){
-            expect(sut.compounderClickValue).toBe(1)
+            expect(sut.clickValue).toBe(1)
         })
     })
 
-    describe('compounderClickValueMultiplied', function(){
+    describe('clickValueMultiplied', function(){
         it('increases the value of a click by 1.2x', function(){
-            sut.compounderClickValueMultiplied()
-            expect(sut.compounderClickValue).toBe(1.2)
+            sut.clickValueMultiplied()
+            expect(sut.clickValue).toBe(1.2)
         })
     })
     
     describe('purchaseCompounder', function(){
         it('increases each click value to 1.2 to the amount of compounderCount', function(){
             sut.purchaseCompounder()
-            expect(sut.compounderClickValue).toBe(1.2)
+            expect(sut.clickValue).toBe(1.2)
         })
     })
 
