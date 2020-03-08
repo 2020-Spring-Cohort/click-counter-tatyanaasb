@@ -7,15 +7,22 @@
     <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
+    <header>
+        <h1>Click the Button</h1>
+    </header>
     <div class="container">
-        <header>
-            <h1>Click the Button</h1>
-        </header>
     <main>
-        <section>
-            <div>
-                <button type="button" onclick="alert(getClickCount())"></button>
-            <div class="anchor"></div>
+        <section class="clicker_buttons">
+    
+                <button class="clicker_buttons__incrementor"></button>
+                <button class="clicker_buttons__companion">Add Companion</button>
+                <button class="clicker_buttons__compounder">Add Compounder</button>
+        
+        </section>
+        <section class="clicker_data">
+            <div class="clicker_data__curent_clicks"></div>
+            <div class="clicker_data__current_companion"></div>
+            <div class="clicker_data__current_compounder"></div>
         </section>
     </main>
     </div>
