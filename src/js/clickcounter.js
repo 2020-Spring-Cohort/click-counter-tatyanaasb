@@ -14,7 +14,7 @@ class ClickCounter{
     }
 
     clickIncrementor(){
-        this.clickCount = (this.clickCount + this.clickValue);
+        this.clickCount = this.clickCount + this.clickValue;
     }
 
     getClickCompanionCount(){
@@ -22,7 +22,7 @@ class ClickCounter{
     }
     
     purchaseEachClickCompanion(){
-        this.clickCompanionCost = this.clickCompanionCost + (this.clickCompanionCost*.1);  
+        this.clickCompanionCost = this.clickCompanionCost + (this.clickCompanionCost * .1);  
     }
 
     purchaseCompanionCondition(){
@@ -62,6 +62,10 @@ class ClickCounter{
         this.clickCount -= this.compounderCost;
         this.purchaseEachCompounder();
         this.clickValueMultiplied();
-    };
+    }
+    
+    updateClickCounts(){
+        this.clickCount = this.clickCount + (this.clickCompanionCount * this.clickValue)
+    }
     
 }

@@ -41,17 +41,13 @@ describe('Click Counter', function(){
         it('increases clicking companion to 1', function(){
             sut.purchaseClickCompanion()
             expect(sut.clickCompanionCount).toBe(1)
-        });
-    })
-
-    describe('purchaseClickCompanion', function(){
+        })
+    
         it('decreases clicking count by 100', function(){
             sut.purchaseClickCompanion()
             expect(sut.clickCount).toBe(-100)
         })
-    })
-
-    describe('purchaseEachClickCompanion', function(){
+    
         it('increases the cost by 10%', function(){
             sut.purchaseClickCompanion()
             expect(sut.clickCompanionCost).toBe(110)
@@ -82,19 +78,20 @@ describe('Click Counter', function(){
             sut.purchaseCompounder()
             expect(sut.compounderCount).toBe(1)
         })
-    })
     
-    describe('purchaseCompounder', function(){
         it('decreases compounder cost from clickCount', function(){
             sut.purchaseCompounder()
             expect(sut.clickCount).toBe(-10)
         })
-    })
-
-    describe('purchaseEachCompounder', function(){
+    
         it('increases the cost by 10%', function(){
             sut.purchaseCompounder()
             expect(sut.compounderCost).toBe(11)
+        })
+
+        it('increases each click value to 1.2 to the amount of compounderCount', function(){
+            sut.purchaseCompounder()
+            expect(sut.clickValue).toBe(1.2)
         })
     })
 
@@ -118,11 +115,23 @@ describe('Click Counter', function(){
         })
     })
     
-    describe('purchaseCompounder', function(){
-        it('increases each click value to 1.2 to the amount of compounderCount', function(){
+    describe('updateClickCounts', function(){
+        it('clickCompanionCount x clickValue adds 1 to current clickCount', function(){
+            sut.clickCount = 100
+            sut.purchaseClickCompanion()
+
+            sut.updateClickCounts()
+            expect(sut.clickCount).toBe(1)
+        })
+        it('if purchaseCompounder is selected clickValueMuliplied is applied updating ea click value to 1.2', function(){
+            sut.clickCount = 110
+            sut.purchaseClickCompanion()
             sut.purchaseCompounder()
-            expect(sut.clickValue).toBe(1.2)
+
+            sut.updateClickCounts()
+            expect(sut.getClickCount()).toBe(1.2)
         })
     })
+    
 
 })
