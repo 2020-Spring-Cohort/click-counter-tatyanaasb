@@ -82,8 +82,10 @@ const currentClickData = document.querySelector('.clicker_data__current_click')
 const currentCompanionData = document.querySelector('.clicker_data__current_companion')
 const currentCompounderData = document.querySelector('.clicker_data__current_compounder')
 
+const title = document.querySelector("#head");
+
 const updateClickCountData = () => {
-    currentClickData.innerText = appButton.getClickCount();
+    title.innerText = (appButton.getClickCount())
 }
 const buttonClickCounter = () => {
     clickButtonElement.addEventListener('click', () => {
