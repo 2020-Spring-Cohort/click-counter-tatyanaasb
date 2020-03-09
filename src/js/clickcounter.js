@@ -33,9 +33,12 @@ class ClickCounter{
     }
 
     purchaseClickCompanion(){
-        this.clickCompanionCount++;
-        this.clickCount -= this.clickCompanionCost;
-        this.purchaseEachClickCompanion();
+        if (this.clickCount >= this.clickCompanionCost)
+        {
+            this.clickCompanionCount++;
+            this.clickCount -= this.clickCompanionCost;
+            this.purchaseEachClickCompanion();
+        }
     }
 
     getCompounderCount(){
@@ -82,22 +85,31 @@ const currentCompounderData = document.querySelector('.clicker_data__current_com
 const updateClickCountData = () => {
     currentClickData.innerText = appButton.getClickCount();
 }
-
 const buttonClickCounter = () => {
     clickButtonElement.addEventListener('click', () => {
         appButton.clickIncrementer();
         updateClickCountData();
     })
 }
-
 buttonClickCounter();
 
-// const updateCompanionData = () => {
-//     currentCompanionData.innerText = appButton.getClickCompanionCount();
-// }
-// const updateCompounderData = () => {
-//     currentCompounderData.innerText = appButton.getCompounderCount();
-// }
+
+const updateCompanionData = () => {
+    currentCompanionData.innerText = appButton.getClickCompanionCount();
+}
+const buttonCompanionCounter = () => {
+    clickCompanionElement.addEventListener('click', () => {
+        appButton.purchaseClickCompanion();
+        updateClickCountData();
+        updateCompanionData();
+    })
+}
+buttonCompanionCounter();
+
+
+const updateCompounderData = () => {
+    currentCompounderData.innerText = appButton.getCompounderCount();
+}
 
 
 
