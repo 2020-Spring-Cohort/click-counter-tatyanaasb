@@ -8,26 +8,37 @@
 </head>
 <body>
     <header>
-        
+        <nav>
+            <ul>
+                <li>About CCCC</li>
+                <li>Inspiration</li>
+                <li>The Webpage Maker</li>
+            </ul>
+        </nav>
     </header>
     <div class="container">
     <main>
         <section class="clicker_buttons">
             <div class="clicker_main">
-                <button class="clicker_buttons__incrementer"><h1 id="head">Click the Button</h1></button>
+                <button class="clicker_buttons__incrementer"><h1 id="clicks">Click THIS Button</h1></button>
             </div>
             <div class="clicker_helpers">
-                <button class="clicker_buttons__companion">Add Companion</button>
-                <button class="clicker_buttons__compounder">Add Compounder</button>
+                <button class="clicker_buttons__companion"><h3 id="companions">Add Companion</h3></button>
+                <div class="clicker_data__current_companion"></div>
+                <button class="clicker_buttons__compounder"><h3 id="compounders">Add Compounder</h3></button>
+                <div class="clicker_data__current_compounder"></div>
             </div>
         </section>
         <section class="clicker_data">
             <div class="clicker_data__current_click"></div>
-            <div class="clicker_data__current_companion"></div>
-            <div class="clicker_data__current_compounder"></div>
+            <!-- <div class="clicker_data__current_companion"></div>
+            <div class="clicker_data__current_compounder"></div> -->
         </section>
     </main>
     </div>
     <script src="/src/js/clickcounter.js"></script>
 </body>
+<footer>
+    <p>&copy;CCCC 2020</p> 
+</footer>
 </html>

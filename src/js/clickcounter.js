@@ -60,16 +60,21 @@ class ClickCounter{
         this.clickValue = this.clickValue + (this.clickValue * .2);
     }
     
-    purchaseCompounder(){
-        this.compounderCount++;
-        this.clickCount -= this.compounderCost;
-        this.purchaseEachCompounder();
-        this.clickValueMultiplied();
-    }
-    
     updateClickCounts(){
         this.clickCount = this.clickCount + (this.clickCompanionCount * this.clickValue)
     }
+    
+    purchaseCompounder(){
+        if (this.clickCount >= this.compounderCost)
+        {
+            this.compounderCount++;
+            this.clickCount -= this.compounderCost;
+            this.purchaseEachCompounder();
+            this.clickValueMultiplied();
+            this.updateClickCounts();
+        }
+    }
+    
 }
 
 const appButton = new ClickCounter();
@@ -82,7 +87,7 @@ const currentClickData = document.querySelector('.clicker_data__current_click')
 const currentCompanionData = document.querySelector('.clicker_data__current_companion')
 const currentCompounderData = document.querySelector('.clicker_data__current_compounder')
 
-const title = document.querySelector("#head");
+const title = document.querySelector("#clicks");
 
 const updateClickCountData = () => {
     title.innerText = (appButton.getClickCount())
