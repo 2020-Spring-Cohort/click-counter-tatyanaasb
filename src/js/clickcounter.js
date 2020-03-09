@@ -13,7 +13,7 @@ class ClickCounter{
         return this.clickCount;
     }
 
-    clickIncrementor(){
+    clickIncrementer(){
         this.clickCount = this.clickCount + this.clickValue;
     }
 
@@ -71,10 +71,33 @@ class ClickCounter{
 
 const appButton = new ClickCounter();
 
-const clickButtonElement = document.querySelector('.clicker_buttons__incrementor')
+const clickButtonElement = document.querySelector('.clicker_buttons__incrementer')
 const clickCompanionElement = document.querySelector('.clicker_buttons__companion')
 const clickCompounderElement = document.querySelector('.clicker_buttons__compounder')
 
-const currentClicksData = document.querySelector('.clicker_data__current_clicks')
+const currentClickData = document.querySelector('.clicker_data__current_click')
 const currentCompanionData = document.querySelector('.clicker_data__current_companion')
 const currentCompounderData = document.querySelector('.clicker_data__current_compounder')
+
+const updateClickCountData = () => {
+    currentClickData.innerText = appButton.getClickCount();
+}
+
+const buttonClickCounter = () => {
+    clickButtonElement.addEventListener('click', () => {
+        appButton.clickIncrementer();
+        updateClickCountData();
+    })
+}
+
+buttonClickCounter();
+
+// const updateCompanionData = () => {
+//     currentCompanionData.innerText = appButton.getClickCompanionCount();
+// }
+// const updateCompounderData = () => {
+//     currentCompounderData.innerText = appButton.getCompounderCount();
+// }
+
+
+
