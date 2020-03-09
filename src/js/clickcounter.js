@@ -62,7 +62,7 @@ class ClickCounter{
     
     purchaseCompounder(){
         this.compounderCount++;
-        this.clickCount -= this.compounderCost;
+        this.clickCount.toFixed(4) -= this.compounderCost;
         this.purchaseEachCompounder();
         this.clickValueMultiplied();
     }
@@ -112,6 +112,14 @@ buttonCompanionCounter();
 const updateCompounderData = () => {
     currentCompounderData.innerText = appButton.getCompounderCount();
 }
+const buttonCompounderCounter = () => {
+    clickCompounderElement.addEventListener('click', () => {
+        appButton.purchaseCompounder();
+        updateClickCountData();
+        updateCompounderData();
+    })
+}
+buttonCompounderCounter();
 
 
 
