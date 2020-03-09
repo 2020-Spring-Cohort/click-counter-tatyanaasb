@@ -62,7 +62,7 @@ class ClickCounter{
     
     purchaseCompounder(){
         this.compounderCount++;
-        this.clickCount.toFixed(4) -= this.compounderCost;
+        this.clickCount -= this.compounderCost;
         this.purchaseEachCompounder();
         this.clickValueMultiplied();
     }
